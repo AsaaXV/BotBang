@@ -10,11 +10,11 @@
 // thank you to MikeBot Dev Team
 // thank you to ALL Bot creator
 // and thanks you to who support my Bot
-let fs = require('fs')
+
 global.linkGC = ['https://chat.whatsapp.com/GnaUCz2gOLo0xMpBXKNUxi', 'https://chat.whatsapp.com/ChWk4KZMzAQGivQ3Vx1LsV', 'https://chat.whatsapp.com/BL0hpaEfFFNEMnD0mBTppA'] // ganti jadi group lu
 global.owner = ['6281313144291', '6285895774939', '62858957749391'] // Put your number here
 global.mods = [] // Want some help?
-global.prems = JSON.parse(fs.readFileSync('.src/premium.json')) // Prem user
+global.prems = [] // Prem user
 global.APIs = { // API Prefix
   // name: 'https://website'
   nrtm: 'https://nurutomo.herokuapp.com',
