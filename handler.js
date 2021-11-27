@@ -198,8 +198,8 @@ module.exports = {
           if (!('descUpdate' in chat)) chat.descUpdate = true
           if (!('delete' in chat)) chat.delete = false
           if (!('antiBadword' in chat)) chat.antiBadword = true
-          if (!('rpg' in chat)) chat.delete = true
-          if (!('nsfw' in chat)) chat.delete = false
+          if (!('rpg' in chat)) chat.rpg = true
+          if (!('nsfw' in chat)) chat.nsfw = false
           if (!('antiLink' in chat)) chat.antiLink = false
           if (!('viewonce' in chat)) chat.viewonce = true
         } else global.db.data.chats[m.chat] = {
@@ -226,22 +226,22 @@ module.exports = {
           if (!'anticall' in settings) settings.anticall = true
           if (!'antispam' in settings) settings.antispam = true
           if (!'antitroli' in settings) settings.antitroli = true
-          if (!'backup' in settings) settings.backup = false
+          if (!'backup' in settings) settings.backup = true
           if (!isNumber(settings.backupDB)) settings.backupDB = 0
           if (!'groupOnly' in settings) settings.groupOnly = false
           if (!'jadibot' in settings) settings.groupOnly = false
-          if (!'nsfw' in settings) settings.nsfw = true
+          if (!'nsfw' in settings) settings.nsfw = false
           if (!isNumber(settings.status)) settings.status = 0
         } else global.db.data.settings[this.user.jid] = {
           anon: true,
           anticall: true,
           antispam: true,
           antitroli: true,
-          backup: false,
+          backup: true,
           backupDB: 0,
           groupOnly: false,
           jadibot: false,
-          onsfw: true,
+          onsfw: false,
           status: 0,
         }
       } catch (e) {
