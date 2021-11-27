@@ -15,8 +15,8 @@ handler.all = async function (m, { isBlocked }) {
     try {
         if (m.mentionedJid.includes(this.user.jid) && m.isGroup) {
             await this.send2Button(m.chat,
-                isBanned ? 'nekobotz tidak aktif' : banned ? 'kamu dibanned' : 'nekobotz disini',
-                '© nekobotz',
+                isBanned ? 'nekobotz tidak aktif' : banned ? 'kamu dibanned' : 'BotBang disini',
+                '© BotBang',
                 isBanned ? 'Unban' : banned ? 'Pemilik Bot' : 'Menu',
                 isBanned ? '.unban' : banned ? '.owner' : '.?',
                 m.isGroup ? 'Ban' : isBanned ? 'Unban' : 'Donasi',
@@ -40,7 +40,7 @@ handler.all = async function (m, { isBlocked }) {
 │• 6285240389682
 ╰────❏
 ╭─❏ 〘 INFO 〙
-│➤ Tertarik Untuk Beli Bot Ini?
+│➤ Tertarik Untuk Sewa Bot Ini?
 │➤ Ketuk Tombol Di Bawah Ya
 ╰────❏
 ╭─❏〘 CREATOR 〙
@@ -70,16 +70,6 @@ handler.all = async function (m, { isBlocked }) {
             this.sendFile(global.owner[0] + '@s.whatsapp.net', fs.readFileSync('./database.json'), 'database.json', '', 0, 0, { mimetype: 'application/json' })
             setting.backupDB = new Date() * 1
         }
-    }
-
-    // update status
-    if (new Date() * 1 - setting.status > 1000) {
-        let _uptime = process.uptime() * 1000
-        let uptime = clockString(_uptime)
-        await this.setStatus(`Aktif selama ${uptime} | Mode: ${global.opts['self'] ? 'Private' : setting.groupOnly ? 'Hanya Grup' : 'Publik'} | BotBang by FaturIdris`).catch(_ => _)
-        setting.status = new Date() * 1
-    }
-
 }
 
 module.exports = handler

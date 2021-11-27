@@ -20,7 +20,7 @@ handler.all = async function (m, { isPrems }) {
         let json = await res.json()
         await m.reply(wait)
         // m.reply(util.format(json))
-        await this.sendFile(m.chat, json.nowm, '', '© BOT BAMG', m)
+        await this.sendFile(m.chat, json.nowm, '', '© BotBang', m)
     }
 
     if (/^.*cocofun/i.test(m.text)) {
@@ -29,7 +29,7 @@ handler.all = async function (m, { isPrems }) {
         let json = await res.json()
         await m.reply(wait)
         // m.reply(util.format(json))
-        await this.sendFile(m.chat, json.download, '', '© BOT BANG', m)
+        await this.sendFile(m.chat, json.download, '', '© BotBang', m)
     }
 
     if (/^.*(fb.watch|facebook.com)/i.test(m.text)) {
@@ -47,7 +47,7 @@ handler.all = async function (m, { isPrems }) {
             let json = JSON.parse(igdl)
             await m.reply(wait)
             for (let { downloadUrl, type } of json) {
-                this.sendFile(m.chat, downloadUrl, 'ig' + (type == 'image' ? '.jpg' : '.mp4'), '© BOT BANG', m, 0, { thumbnail: await (await fetch(downloadUrl)).buffer() })
+                this.sendFile(m.chat, downloadUrl, 'ig' + (type == 'image' ? '.jpg' : '.mp4'), '© BotBang', m, 0, { thumbnail: await (await fetch(downloadUrl)).buffer() })
             }
         }).catch(_ => _)
     }
@@ -59,7 +59,7 @@ handler.all = async function (m, { isPrems }) {
             if (!json.status) return m.reply(eror)
             await m.reply(wait)
             m.reply(util.format(json))
-            await this.sendFile(m.chat, json.data.url, '', '© BOT BANG', m)
+            await this.sendFile(m.chat, json.data.url, '', '© BotBang', m)
         }).catch(_ => _)
     }
 
@@ -70,7 +70,7 @@ handler.all = async function (m, { isPrems }) {
             let pesan = json.data.map((v) => `Link: ${v.url}`).join('\n------------\n')
             await m.reply(wait)
             for (let { url } of json.data) {
-                this.sendFile(m.chat, url, 'ig' + (/mp4/i.test(url) ? '.mp4' : '.jpg'), '© BOT BANG', m)
+                this.sendFile(m.chat, url, 'ig' + (/mp4/i.test(url) ? '.mp4' : '.jpg'), '© BotBang', m)
             }
         }).catch(_ => _)
     }
